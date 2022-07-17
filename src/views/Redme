@@ -1,0 +1,15 @@
+Component folder - consist of all the view whose data are not in the Store
+Container folder -  consit of all the view whose data are in the Store
+
+
+
+/**
+ * Importance of Redux
+ * Data flow inside redux which is derived from the FLUX
+ * What are different main entities which are involved in redux.
+ * Actions, Reducers and the Store.
+ * View -> Generates Events -> Processed by Controller -> Generates Actions
+ * Generated Actions-> Dispatched to Various Reducers by Redux(library)-> Reducers update the store.
+ * Store is updated -> All the UI elements connected to that store or the data point gets re-rendered. 
+ * react, redux, react-redux.
+ */

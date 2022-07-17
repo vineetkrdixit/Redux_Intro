@@ -1,0 +1,9 @@
+.input-filed {
+  width: 70px;
+}
+
+.main-card {
+  height: 300px;
+  width: 700px;
+  transform: translate(50%, 50%);
+}
