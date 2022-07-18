@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import store from "../../store";
 import { CounterAction } from "../../store/actions/CounterAction";
 import "../containers/Counter.css";
+import asyncadd from "../../store/thungs/asyncadd";
 
 const Counter = (props) => {
-  const { count, increment, decrement, addbyvalue } = props;
+  const { count, increment, decrement, addbyvalue, asyncadd } = props;
   const [inputValue, setInputValue] = useState();
   const handelChange = (e) => {
     setInputValue(e.target.value);
@@ -13,7 +14,9 @@ const Counter = (props) => {
   //   const Increment = () => {};
   //   const Decrement = () => {};
   //   const AddByValue = () => {};
-  //   const AsyncAdd = () => {};
+  //   const asyncadd = () => {
+  //     return inputValue;
+  //   };
 
   return (
     <>
@@ -41,6 +44,7 @@ const Counter = (props) => {
           <input
             type="number"
             className="form-control input-filed mt-1"
+            value={inputValue}
             onChange={handelChange}
           />
           <button
@@ -51,7 +55,7 @@ const Counter = (props) => {
           </button>
           <button
             className="btn btn-warning mt-2 m-2 btn-sm"
-            // onClick={AsyncAdd}
+            onClick={() => asyncadd()}
           >
             Async Add
           </button>
@@ -80,6 +84,12 @@ const mapDispatchToProps = (dispatch) => {
           inputValue,
         },
       }),
+    asyncadd: () =>
+      dispatch(
+        asyncadd({
+          type: CounterAction.asyncadd,
+        })
+      ),
   };
 };
 

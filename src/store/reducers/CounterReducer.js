@@ -25,11 +25,13 @@ const CounterReducer = (store = initialState, action) => {
     }
     case "counter/addbyvalue": {
       return {
-        count: store.count + action.payload.inputValue,
+        count: store.count + Number(action.payload.inputValue),
       };
     }
     case "counter/asyncadd": {
-      return store;
+      return {
+        count: store.count + Number(action.payload.incrementValue),
+      };
     }
     default: {
       return store;
