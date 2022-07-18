@@ -30,3 +30,38 @@ mapDispatchToProps
 - Here combineReducers have ({
 - filename:functionName})
   \*/
+
+  how to use redux
+
+  1.wrap App in Provide in index.js in root of the proggrame
+  import store
+  <Provider store={store}>
+  <App/>
+  </Provider>
+
+  2.create a Action
+  const CounterAction={
+  all the action:action-Types
+  ex:
+  increment:counter/increment
+  }
+
+  3.Create Reduser
+  reduser is a plain javaScript function which has to be exported
+  always give store a initial value
+
+const CounterReduser=(store,action)=>{
+switch(action.type){
+case "counter/increment":{
+return what you want to excute}
+}
+
+4.Create store
+import creteStore
+
+import redusers
+const store=createStore(redusers)
+
+export default store
+
+5.on the container page
